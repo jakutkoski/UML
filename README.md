@@ -4,6 +4,21 @@ based on the Speech-in-Noise Psychometric Function.
 The traditional procedures for testing how well a patient can hear takes a lot of time.
 Our goal is to reduce the time it takes to test patients' hearing ability.
 
+This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+version 0.15.1.
+
+## Installation
+
+**After forking/cloning this repository...**
+
+Install yo, grunt-cli, bower, generator-angular, and generator-karma:
+```
+npm install -g grunt-cli bower yo generator-karma generator-angular
+```
+
+And install node_modules and bower_components at the root of this repository
+by running `npm install` and `bower install`.
+
 ## For development:
 
 1. **Fork** current mater branch
@@ -19,6 +34,16 @@ Our goal is to reduce the time it takes to test patients' hearing ability.
 
 Development notes are located [in notes/README.md](notes/README.md).
 This project is currently written using [AngularJS](https://angularjs.org/).
+
+## Build & development
+
+Run `grunt` to build a `dist/` folder for deployment.
+Run `grunt serve` for a live preview of the app that automatically refreshes
+whenever it detects a change in the code.
+
+## Testing
+
+Running `grunt test` will run the unit tests with Karma.
 
 ## Contributors
 

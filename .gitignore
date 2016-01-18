@@ -1,6 +1,6 @@
-# Craft Storage (cache) [http://buildwithcraft.com/help/craft-storage-gitignore]
-/craft/storage/*
-!/craft/storage/logo/*
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
 .DS_Store
-bower_components/
-node_modules/
