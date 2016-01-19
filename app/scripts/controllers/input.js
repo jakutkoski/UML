@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name sinpfApp.controller:AboutCtrl
+ * @name sinpfApp.controller:InputCtrl
  * @description
- * # AboutCtrl
+ * # InputCtrl
  * Controller of the sinpfApp
  */
 angular.module('sinpfApp')
-  .controller('AboutCtrl', function () {
+  .controller('InputCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

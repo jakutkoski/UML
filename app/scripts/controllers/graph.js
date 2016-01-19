@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name sinpfApp.controller:MainCtrl
+ * @name sinpfApp.controller:GraphCtrl
  * @description
- * # MainCtrl
+ * # GraphCtrl
  * Controller of the sinpfApp
  */
 angular.module('sinpfApp')
-  .controller('MainCtrl', function () {
+  .controller('GraphCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
