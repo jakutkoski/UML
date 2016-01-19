@@ -17,7 +17,7 @@ describe('Controller: InstructionsCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(InstructionsCtrl.awesomeThings.length).toBe(3);
+  it('should be static', function () {
+    expect(InstructionsCtrl.isStatic).toBe(true);
   });
 });

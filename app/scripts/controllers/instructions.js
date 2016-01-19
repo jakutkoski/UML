@@ -9,9 +9,5 @@
  */
 angular.module('sinpfApp')
   .controller('InstructionsCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    this.isStatic = true;
   });
