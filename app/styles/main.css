@@ -7,7 +7,6 @@
 
 body {
   padding: 0;
-  padding-top: 70px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -81,4 +80,41 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/***************************************************************/
+/* Everything ^above^ is the default generated CSS from yeoman */
+/* Below is more custom CSS for this app */
+/***************************************************************/
+
+#inputBorder {
+  margin: 0 auto 4em auto;
+  padding: 2%;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background-color: #E1E8EB;
+}
+
+#enterButton {
+  padding-top: 2%;
+}
+
+#inputArea {
+  padding: 1vw;
+  border-radius: 4px;
+  text-align: left;
+  border: solid gray thin;
+  background-color: #FFF;
+  font-size: 2vw;
+  line-height: 3.5vw;
+}
+
+#inputArea .input-group {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.nav-pills {
+  padding-bottom: 2%;
 }

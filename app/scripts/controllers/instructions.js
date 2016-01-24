@@ -7,7 +7,6 @@
  * # InstructionsCtrl
  * Controller of the sinpfApp
  */
-angular.module('sinpfApp')
-  .controller('InstructionsCtrl', function () {
-    this.isStatic = true;
-  });
+angular.module('sinpfApp').controller('InstructionsCtrl', function () {
+  this.isStatic = true;
+});

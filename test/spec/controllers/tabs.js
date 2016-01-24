@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: InputCtrl', function () {
+describe('Controller: TabsCtrl', function () {
 
   // load the controller's module
   beforeEach(module('sinpfApp'));
 
-  var InputCtrl,
+  var TabsCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    InputCtrl = $controller('InputCtrl', {
+    TabsCtrl = $controller('TabsCtrl', {
       $scope: scope
       // place here mocked dependencies
     });

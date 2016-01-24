@@ -1,0 +1,17 @@
+<div id="tabs">
+
+  <div id="tabChoices">
+    <ul class="nav nav-pills">
+      <li ng-click="tabs.toggle('inputView')"><a href="#/">Input</a></li>
+      <li ng-click="tabs.toggle('graphView')"><a href="#/">Graph</a></li>
+      <li ng-click="tabs.toggle('instructionsView')"><a href="#/">Instructions</a></li>
+    </ul>
+  </div>
+
+  <div id="tabViews">
+    <div ng-include="'views/input.html'" ng-show="tabs.isInputVisible"></div>
+    <div ng-include="'views/graph.html'" ng-show="tabs.isGraphVisible"></div>
+    <div ng-include="'views/instructions.html'" ng-show="tabs.isInstructionsVisible"></div>
+  </div>
+
+</div>
