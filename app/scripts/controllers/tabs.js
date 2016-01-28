@@ -10,33 +10,27 @@
 angular.module('sinpfApp').controller('TabsCtrl', function () {
   var tabs = this;
 
-  tabs.isInputVisible = true;
-  tabs.isGraphVisible = false;
-  tabs.isInstructionsVisible = false;
+  tabs.input        = { isVisible: true,  class: 'active'};
+  tabs.graph        = { isVisible: false, class: ''};
+  tabs.instructions = { isVisible: false, class: ''};
 
   function toggle(givenView) {
-    tabs.isInputVisible = false;
-    tabs.isGraphVisible = false;
-    tabs.isInstructionsVisible = false;
-    
-    switch(givenView) {
-      case 'inputView':
-        tabs.isInputVisible = true;
-        break;
+    tabs.input = { isVisible: false, class: ''};
+    tabs.graph = { isVisible: false, class: ''};
+    tabs.instructions = { isVisible: false, class: ''};
 
-      case 'graphView':
-        tabs.isGraphVisible = true;
-        // broadcast update graph view
-        break;
-
-      case 'instructionsView':
-        tabs.isInstructionsVisible = true;
-        break;
-
-      default:
-        tabs.isInputVisible = true;
-        break;
-
+    if (givenView === 'inputView') {
+      tabs.input.isVisible = true;
+      tabs.input.class = 'active';
+    } else if (givenView === 'graphView') {
+      tabs.graph.isVisible = true;
+      tabs.graph.class = 'active';
+    } else if (givenView === 'instructionsView') {
+      tabs.instructions.isVisible = true;
+      tabs.instructions.class = 'active';
+    } else {
+      tabs.input.isVisible = true;
+      tabs.input.class = 'active';
     }
   }
 

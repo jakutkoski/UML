@@ -3,7 +3,7 @@
   <div id="inputArea">
     <div class="input-group">
       <span class="input-group-addon">Speech Level</span>
-      <input ng-model="speechLevel.val" type="text" class="form-control" size="3">
+      <input ng-model="speechLevel.val" ng-readonly="speechLevel.isReadonly" type="text" class="form-control" size="3">
       <span class="input-group-addon">dBHL</span>
     </div>
     <div class="input-group">
@@ -22,6 +22,13 @@
 
   <div id="enterButton">
     <input type="button" class="btn-success" value="Enter" ng-click="runIteration()"></input>
+  </div>
+
+  <div id="flashArea">
+    <div class="alert alert-danger" role="alert" ng-show="flasher.isVisible">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp;
+      <span ng-model="flasher.message">{{ flasher.message }}</span>
+    </div>
   </div>
 
 </div>

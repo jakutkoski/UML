@@ -87,8 +87,27 @@ body {
 /* Below is more custom CSS for this app */
 /***************************************************************/
 
+
+.navbar a:link {
+  color: #FFF;
+  font-size: 1.5em;
+}
+
+.navbar a:visited {
+  color: #FFF;
+}
+
+.navbar a:active {
+  color: #FFF;
+}
+
+.navbar a:hover {
+  color: #FFF;
+}
+
 #inputBorder {
   margin: 0 auto 4em auto;
+  margin-top: 1%;
   padding: 2%;
   text-align: center;
   border: 1px solid gray;
@@ -115,6 +134,6 @@ body {
   padding-bottom: 1%;
 }
 
-.nav-pills {
-  padding-bottom: 2%;
+#flashArea {
+  padding-top: 2%;
 }
