@@ -7,7 +7,7 @@
  * # InputCtrl
  * Controller of the sinpfApp
  */
-angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $timeout) {
+angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $timeout, track) {
   $scope.nElem = 0;
   $scope.mElem = 5;
   $scope.speechLevel = { val: 65, isReadonly: false };
@@ -22,12 +22,11 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
   $scope.runIteration = function() {
     if ($scope.verifyInput()) {
       // iteration.run(parseFloat($scope.nElem), parseFloat($scope.mElem));
-      // update iteration count
+      // update iteration count (do this in the iteration service)
       // call to updateInputElements
-      // if nrev > 16 then $scope.terminate()
-      // focus on nElem
+      if (track.getReversalCount() > 16) { $scope.terminate(); }
       $scope.speechLevel.isReadonly = true;
-      console.log('iteration');
+      // focus on nElem
     }
     else { console.log('fail'); }
   };
@@ -36,7 +35,9 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
     var n = parseInt($scope.nElem);
     var m = parseInt($scope.mElem);
     var SL = parseFloat($scope.speechLevel.val);
-    if (isNaN(n) || isNaN(m) || n>m || n<0 || m<=0) {
+    if (track.getReversalCount() > 16) {
+      $scope.terminate();
+    } else if (isNaN(n) || isNaN(m) || n>m || n<0 || m<=0) {
       $scope.flash('Please fix the Response input.', 3000);
       return false;
     } else if (isNaN(SL)) {
@@ -48,8 +49,7 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
   };
 
   $scope.terminate = function() {
-    $window.alert('Experiment finished! Continue to see the graph.');
-    // toggle to graphView
+    $window.alert('Experiment finished! Continue to the Graph tab.');
   };
 
   $scope.flash = function(givenMessage, timeLength) {
