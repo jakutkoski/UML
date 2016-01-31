@@ -70,7 +70,7 @@ angular.module('sinpfApp').factory('track', function(utility, UMLtable) {
   track.setLogL           = function(val) { LogL = val; };
 
   // inverse psychometric function
-  track.inversePF = function(swpt, phi) {
+  track.inversePsychometric = function(swpt, phi) {
     if (swpt >= 1 && swpt <= 3) {
       var alpha   = phi.alpha,
           beta    = phi.beta,

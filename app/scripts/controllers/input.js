@@ -7,7 +7,7 @@
  * # InputCtrl
  * Controller of the sinpfApp
  */
-angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $timeout, track) {
+angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $timeout, track, iteration) {
   $scope.nElem = 0;
   $scope.mElem = 5;
   $scope.speechLevel = { val: 65, isReadonly: false };
@@ -21,14 +21,12 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
 
   $scope.runIteration = function() {
     if ($scope.verifyInput()) {
-      // iteration.run(parseFloat($scope.nElem), parseFloat($scope.mElem));
-      // update iteration count (do this in the iteration service)
-      // call to updateInputElements
+      iteration.run(parseFloat($scope.nElem), parseFloat($scope.mElem));
+      $scope.updateInputElements();
       if (track.getReversalCount() > 16) { $scope.terminate(); }
       $scope.speechLevel.isReadonly = true;
-      // focus on nElem
+      document.getElementById('nInput').focus();
     }
-    else { console.log('fail'); }
   };
 
   $scope.verifyInput = function() {
@@ -45,6 +43,19 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
       return false;
     } else {
       return true;
+    }
+  };
+
+  $scope.updateInputElements = function() {
+    var snrArray = track.getSnrArray();
+    if ($scope.speechLevel.val !== '' && !isNaN($scope.speechLevel.val)) {
+      if (snrArray[snrArray.length - 1] === 9999) {
+        $scope.maskerLevel = 'OFF';
+      } else {
+        $scope.maskerLevel = $scope.speechLevel.val - snrArray[snrArray.length - 1];
+      }
+
+      $scope.nElem = '';
     }
   };
 
