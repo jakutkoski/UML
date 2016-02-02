@@ -1,1 +1,26 @@
-<p>This is the graph view.</p>
+<div id="graphBorder" ng-controller="GraphCtrl">
+
+  <div id="graphComponent">
+    <canvas id="chartCanvas" class="chart chart-line" chart-series="series" chart-options="options" chart-legend="true"
+            chart-labels="xPoints" chart-data="yPoints">
+    </canvas>
+  </div>
+
+  <div id="formulaView">
+    <p> SRT = <span ng-bind="formula.alpha"></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Slope = <span ng-bind="formula.slope"></span>%/dB &nbsp;&nbsp;&nbsp;&nbsp;
+        Iterations: <span ng-bind="lastIterationUpdated"></span>
+    </p>
+    <p> PC = <span ng-bind="formula.gamma"></span> +
+      ((<span ng-bind="formula.lambda"></span> - <span ng-bind="formula.gamma"></span>) /
+      (1 + e <sup>-<span ng-bind="formula.beta"></span> *
+        (x - <span ng-bind="formula.alpha"></span>)
+      </sup>)))
+    </p>
+  </div>
+
+  <div id="printButton">
+    <input type="button" class="btn-default" value="Print" ng-click="printGraph()"></input>
+  </div>
+
+</div>
