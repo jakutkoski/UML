@@ -7,7 +7,7 @@
  * # TabsCtrl
  * Controller of the sinpfApp
  */
-angular.module('sinpfApp').controller('TabsCtrl', function () {
+angular.module('sinpfApp').controller('TabsCtrl', function($scope) {
   var tabs = this;
 
   tabs.input        = { isVisible: true,  class: 'active'};
@@ -25,6 +25,7 @@ angular.module('sinpfApp').controller('TabsCtrl', function () {
     } else if (givenView === 'graphView') {
       tabs.graph.isVisible = true;
       tabs.graph.class = 'active';
+      $scope.$broadcast('updateGraphView');
     } else if (givenView === 'instructionsView') {
       tabs.instructions.isVisible = true;
       tabs.instructions.class = 'active';

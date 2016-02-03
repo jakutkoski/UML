@@ -104,6 +104,10 @@ body {
   color: #FFF;
 }
 
+.no-pointer-events {
+  pointer-events: none;
+}
+
 #inputBorder {
   margin: 0 auto 4em auto;
   margin-top: 1%;
@@ -171,4 +175,25 @@ body {
   margin: 0.5vw;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #inputBorder, #inputBorder * {
+    visibility: visible;
+  }
+  #graphComponent, #graphComponent * {
+    visibility: visible;
+  }
+  #formulaView, #formulaView * {
+    visibility: visible;
+  }
+  #instructionsBorder, #instructionsBorder * {
+    visibility: visible;
+  }
+  .footer, .footer * {
+    visibility: visible;
+  }
 }
