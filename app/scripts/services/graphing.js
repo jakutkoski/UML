@@ -7,12 +7,16 @@
  * # graphing
  * Factory in the sinpfApp.
  */
-angular.module('sinpfApp').factory('graphing', function() {
+angular.module('sinpfApp').factory('graphing', function(utility) {
 
   // Private graphing functions
   var computeY = function(x,a,b,g,l) {
     l = 1 - l;
     return g + ((l - g) / (1 + Math.pow(Math.E, -b * (x - a))));
+  };
+
+  var calculateSlope = function(beta, gamma) {
+    return (((1.0 / 4.0) * beta) * (1.0 - gamma)) * 100.0;
   };
 
   // Public API to be returned
@@ -25,7 +29,7 @@ angular.module('sinpfApp').factory('graphing', function() {
     while (x <= maxX) {
       y = computeY(x,phi.alpha,phi.beta,phi.gamma,phi.lambda);
       points.xPoints.push(x);
-      yData.push(100*y); // multiplied by 100 to convert to percentage
+      yData.push(100*y);
       x += step;
     }
     
@@ -33,8 +37,14 @@ angular.module('sinpfApp').factory('graphing', function() {
     return points;
   };
 
-  graphing.calculateSlope = function(beta, gamma) {
-    return (((1.0 / 4.0) * beta) * (1.0 - gamma)) * 100.0;
+  graphing.getFormula = function(phi) {
+    var formula = {};
+    formula.alpha = utility.roundToHundredth(phi.alpha);
+    formula.beta = utility.roundToHundredth(phi.beta);
+    formula.lambda = utility.roundToHundredth(1 - phi.lambda);
+    formula.gamma = phi.gamma;
+    formula.slope = calculateSlope(phi.beta, phi.gamma).toPrecision(2);
+    return formula;
   };
 
   return graphing;
