@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Speech-in-Noise Psychometric Function</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -25,7 +26,7 @@
       <div class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#/">Speech-in-Noise Psychometric Function</a>
+            <a class="navbar-brand no-pointer-events" href="#/">Speech-in-Noise Psychometric Function</a>
           </div>
         </div>
       </div>
@@ -37,7 +38,10 @@
 
     <div class="footer">
       <div class="container">
-        <p>Developed by the Applied Hearing Science Lab at Indiana University</p>
+        <p>
+          <span class="glyphicon glyphicon-copyright-mark"></span>
+          2016, Applied Hearing Science Lab at Indiana University
+        </p>
       </div>
     </div>
 
@@ -63,6 +67,8 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -76,6 +82,7 @@
         <script src="scripts/services/utility.js"></script>
         <script src="scripts/services/track.js"></script>
         <script src="scripts/services/iteration.js"></script>
+        <script src="scripts/services/graphing.js"></script>
         <!-- endbuild -->
 </body>
 </html>
