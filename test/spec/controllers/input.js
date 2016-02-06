@@ -70,4 +70,28 @@ describe('Controller: InputCtrl', function () {
     expect(scope.verifyInput()).toBe(false);
   });
 
+  it('should present the correct Masker Level after each iteration', function() {
+    scope.speechLevel.val = '65';
+    scope.maskerLevel = 'OFF';
+    scope.mElem = '5';
+
+    scope.nElem = 1;
+    scope.runIteration();
+    expect(scope.maskerLevel).toBe('OFF');
+
+    scope.nElem = 3;
+    scope.runIteration();
+    expect(scope.maskerLevel).toBe(60);
+
+    scope.nElem = 5;
+    scope.runIteration();
+    expect(scope.maskerLevel).toBe(71);
+
+    scope.nElem = 0;
+    scope.runIteration();
+    scope.nElem = 0;
+    scope.runIteration();
+    expect(scope.maskerLevel).toBe('OFF');
+  });
+
 });
