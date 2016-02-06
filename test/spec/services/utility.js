@@ -16,7 +16,7 @@ describe('Service: utility', function () {
   });
 
   it('should provide a Lambda Lookup function', function() {
-    expect(!!utility.lambdaLookup).toBe(true);
+    expect(utility.lambdaLookup).toBeDefined();
   });
 
   it('should provide a function that rounds to the nearest hundredth', function() {
