@@ -5,7 +5,8 @@
  * @name sinpfApp.controller:InputCtrl
  * @description
  * # InputCtrl
- * Controller of the sinpfApp
+ * Controller of the sinpfApp.
+ * This handles UI logic for the Input tab.
  */
 angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $timeout, track, iteration) {
   $scope.nElem = 0;
@@ -16,7 +17,9 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
   
   $scope.keyPressed = function(event) {
     var keyCode = event.keyCode || event.which || event.charCode;
-    if (keyCode === 13) { $scope.runIteration(); }
+    if (keyCode === 13) { // enter key
+      $scope.runIteration();
+    }
   };
 
   $scope.runIteration = function() {

@@ -5,7 +5,8 @@
  * @name sinpfApp.utility
  * @description
  * # utility
- * Factory in the sinpfApp. Pure functions independent of app-specific data.
+ * Factory in the sinpfApp.
+ * Pure functions independent of app-specific data.
  */
 angular.module('sinpfApp').factory('utility', function () {
   

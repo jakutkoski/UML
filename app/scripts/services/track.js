@@ -5,7 +5,8 @@
  * @name sinpfApp.track
  * @description
  * # track
- * Factory in the sinpfApp. Variables to be tracked and modified.
+ * Factory in the sinpfApp.
+ * Variables to be tracked and modified.
  */
 angular.module('sinpfApp').factory('track', function(utility, UMLtable) {
 
@@ -69,7 +70,7 @@ angular.module('sinpfApp').factory('track', function(utility, UMLtable) {
   track.setLambda         = function(val) { lambda = val; };
   track.setLogL           = function(val) { LogL = val; };
 
-  // inverse psychometric function
+  // inverse psychometric function sets the next snr in snrArray
   track.inversePsychometric = function(swpt, phi) {
     if (swpt >= 1 && swpt <= 3) {
       var alpha   = phi.alpha,

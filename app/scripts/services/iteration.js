@@ -6,6 +6,7 @@
  * @description
  * # iteration
  * Factory in the sinpfApp.
+ * Provides iteration.run function that calculates new track values.
  */
 angular.module('sinpfApp').factory('iteration', function(track, UMLtable) {
   
