@@ -19,7 +19,6 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -79,5 +78,122 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+/***************************************************************/
+/* Everything ^above^ is the default generated CSS from yeoman */
+/* Below is more custom CSS for this app */
+/***************************************************************/
+
+
+.navbar a:link {
+  color: #FFF;
+  font-size: 1.5em;
+}
+
+.navbar a:visited {
+  color: #FFF;
+}
+
+.navbar a:active {
+  color: #FFF;
+}
+
+.navbar a:hover {
+  color: #FFF;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+#inputBorder {
+  margin: 0 auto 4em auto;
+  margin-top: 1%;
+  padding: 2%;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background-color: #E1E8EB;
+}
+
+#inputArea {
+  padding: 1vw;
+  border-radius: 4px;
+  text-align: left;
+  border: solid gray thin;
+  background-color: #FFF;
+  font-size: 2vw;
+  line-height: 3.5vw;
+}
+
+#inputArea .input-group {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#enterButton {
+  padding-top: 2%;
+}
+
+#flashArea {
+  padding-top: 2%;
+}
+
+#instructionsBorder {
+  margin-bottom: 30px;
+}
+
+#graphComponent {
+  padding-top: 20px;
+}
+
+#formulaView {
+  padding: .4em;
+  width: auto;
+  height: auto;
+  border: 1px solid #777;
+  margin-top: 3vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: .1vw;
+  border-radius: 8px;
+}
+
+#printButton {
+  float: right;
+  min-width: 50px;
+  line-height: 25px;
+  font-size: 12pt;
+  text-align: center;
+  background-color: #FDFDFD;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin: 0.5vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #inputBorder, #inputBorder * {
+    visibility: visible;
+  }
+  #graphComponent, #graphComponent * {
+    visibility: visible;
+  }
+  #formulaView, #formulaView * {
+    visibility: visible;
+  }
+  #instructionsBorder, #instructionsBorder * {
+    visibility: visible;
+  }
+  .footer, .footer * {
+    visibility: visible;
   }
 }

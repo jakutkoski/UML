@@ -1,0 +1,37 @@
+<div id="instructionsBorder" ng-controller="InstructionsCtrl">
+  <h2>Purpose:</h2>   
+  <p>The purpose of this application is to help test the patient’s hearing ability.</p>
+  <h3>Requirements:</h3>  
+  <ul>
+    <li>Audiometer</li>
+    <li>Sentences recording (CD, usb, etc.)</li>                        
+    <li>Internet connected device</li>
+  </ul>
+  <h3>Steps:</h3>
+  <ol>
+    <li>Start by preparing the audiometer and the patient.</li>
+    <li>Change the “Speech Level” on the
+      <a href="#/" ng-click="tabs.toggle('inputView')">Input Panel</a>
+      to match the audiometer.</li>
+    <li>Adjust the audiometer’s masker level to match what is shown in the application.</li>
+    <li>Play sound.</li>
+    <li>Record the patient’s response in “n of m correct" format where
+        "m" is the number of words presented and
+        "n" is the number of words the patient heard correctly.</li>
+    <li>Press “Enter”.</li>
+    <li>Repeat steps 4, 5, and 6 until the test is finished.</li>
+  </ol>
+  <h4>Note</h4>
+  <ul>
+    <li>The
+      <a href="#/" ng-click="tabs.toggle('graphView')">Graph Panel</a>
+      will be updated on each Iteration.
+    </li>
+    <li>If the Graph Panel fails to update, you may be using an outdated browser.
+      Please use the latest version of Chrome, Firefox, or Safari.
+    </li>
+    <li>You may only change the “Speech Level” once, before the first iteration.</li>
+    <li>Press the "Enter" or "Return" key on your keyboard to present the next masker level.</li>
+
+  </ul>
+</div>
