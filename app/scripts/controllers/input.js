@@ -25,7 +25,8 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
       $scope.updateInputElements();
       if (track.getReversalCount() > 16) { $scope.terminate(); }
       $scope.speechLevel.isReadonly = true;
-      document.getElementById('nInput').focus();
+      var nInput = document.getElementById('nInput');
+      if (nInput) { nInput.focus(); }
     }
   };
 
@@ -35,6 +36,7 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
     var SL = parseFloat($scope.speechLevel.val);
     if (track.getReversalCount() > 16) {
       $scope.terminate();
+      return false;
     } else if (isNaN(n) || isNaN(m) || n>m || n<0 || m<=0) {
       $scope.flash('Please fix the Response input.', 3000);
       return false;
@@ -48,15 +50,15 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
 
   $scope.updateInputElements = function() {
     var snrArray = track.getSnrArray();
-    if ($scope.speechLevel.val !== '' && !isNaN($scope.speechLevel.val)) {
-      if (snrArray[snrArray.length - 1] === 9999) {
-        $scope.maskerLevel = 'OFF';
-      } else {
-        $scope.maskerLevel = $scope.speechLevel.val - snrArray[snrArray.length - 1];
-      }
-
-      $scope.nElem = '';
+    var newSnr = snrArray[snrArray.length - 1];
+    var SL = parseFloat($scope.speechLevel.val);
+    if (newSnr === 9999) {
+      $scope.maskerLevel = 'OFF';
+    } else {
+      $scope.maskerLevel = SL - newSnr;
     }
+
+    $scope.nElem = '';
   };
 
   $scope.terminate = function() {

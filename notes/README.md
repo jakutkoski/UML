@@ -13,17 +13,16 @@ Another goal is to redesign the view to improve how it looks to the user.
 
 **To Do**
 
-- [x] Port to AngularJS
-- [x] Write unit tests with [Karma and Jasmine](https://docs.angularjs.org/guide/unit-testing)
-- [x] Create documentation
-- [ ] Redesign the view using [Bootstrap](http://getbootstrap.com/)
-- [ ] Deploy
+- [x] Port to AngularJS and Bootstrap using [Yeoman](http://yeoman.io/)
+- [x] Write unit tests with [Jasmine](https://docs.angularjs.org/guide/unit-testing)
+- [ ] Create documentation
 
 **Problems**
 
-Device compatibility might be an issue when we start considering
-how the canvas would look like on small devices. 
+The Graph tab doesn't update on some versions of Internet Explorer.
+We have added a note to the user to use the latest version of
+Chrome, Firefox, or Safari.
 
 **Documentation**
 
-Documentation has not yet been generated.
+Documentation has not yet been made.

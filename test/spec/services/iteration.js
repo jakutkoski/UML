@@ -11,8 +11,8 @@ describe('Service: iteration', function () {
     iteration = _iteration_;
   }));
 
-  it('should do something', function () {
-    expect(!!iteration).toBe(true);
+  it('should provide a run function', function() {
+    expect(!!iteration.run).toBe(true);
   });
 
 });
