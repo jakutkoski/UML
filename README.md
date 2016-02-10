@@ -44,6 +44,8 @@ whenever it detects a change in the code.
 ## Testing
 
 Running `grunt test` will run the unit tests with Karma.
+This will create a `coverage/` folder, where you can see how much code is tested
+by opening `coverage/**/index.html` in a browser.
 
 ## Contributors
 
