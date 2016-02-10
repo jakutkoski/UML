@@ -12,7 +12,7 @@ describe('Service: iteration', function () {
   }));
 
   it('should provide a run function', function() {
-    expect(!!iteration.run).toBe(true);
+    expect(iteration.run).toBeDefined();
   });
 
 });

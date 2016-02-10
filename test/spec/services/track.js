@@ -11,47 +11,67 @@ describe('Service: track', function () {
     track = _track_;
   }));
 
-  it('should provide getters and setters', function() {
-    expect(!!track.getSnrArray).toBe(true);
-    expect(!!track.getIterationCount).toBe(true);
-    expect(!!track.getNarray).toBe(true);
-    expect(!!track.getMarray).toBe(true);
-    expect(!!track.getSweetPoint).toBe(true);
-    expect(!!track.getIsIncreasing).toBe(true);
-    expect(!!track.getReversalCount).toBe(true);
-    expect(!!track.getPhi).toBe(true);
-    expect(!!track.getAlpha).toBe(true);
-    expect(!!track.getBeta).toBe(true);
-    expect(!!track.getLambda).toBe(true);
-    expect(!!track.getLogL).toBe(true);
-
-    expect(!!track.setSnrArray).toBe(true);
-    expect(!!track.setIterationCount).toBe(true);
-    expect(!!track.setNarray).toBe(true);
-    expect(!!track.setMarray).toBe(true);
-    expect(!!track.setSweetPoint).toBe(true);
-    expect(!!track.setIsIncreasing).toBe(true);
-    expect(!!track.setReversalCount).toBe(true);
-    expect(!!track.setPhi).toBe(true);
-    expect(!!track.setAlpha).toBe(true);
-    expect(!!track.setBeta).toBe(true);
-    expect(!!track.setLambda).toBe(true);
-    expect(!!track.setLogL).toBe(true);
+  it('should have the correct initial value for snrArray', function() {
+    expect(track.getSnrArray()).toEqual([9999]);
   });
 
-  it('should have the correct initial values', function() {
-    expect(track.getSnrArray()).toEqual([9999]);
+  it('should have the correct initial value for iterationCount', function() {
     expect(track.getIterationCount()).toEqual(0);
+  });
+
+  it('should have the correct initial value for nArray', function() {
     expect(track.getNarray()).toEqual([]);
+  });
+
+  it('should have the correct initial value for mArray', function() {
     expect(track.getMarray()).toEqual([]);
+  });
+
+  it('should have the correct initial value for sweetPoint', function() {
     expect(track.getSweetPoint()).toEqual(4);
+  });
+
+  it('should have the correct initial value for isIncreasing', function() {
     expect(track.getIsIncreasing()).toEqual(0);
+  });
+
+  it('should have the correct initial value for reversalCount', function() {
     expect(track.getReversalCount()).toEqual(0);
+  });
+
+  it('should have the correct initial value for phi', function() {
     expect(track.getPhi()).toEqual({ alpha: 10, beta: 0.4, gamma: 1e-4, lambda: 0.01 });
+  });
+
+  it('should have the correct initial value for alpha', function() {
     expect(track.getAlpha().length).toEqual(7015);
+  });
+
+  it('should have the correct initial value for beta', function() {
     expect(track.getBeta().length).toEqual(7015);
+  });
+
+  it('should have the correct initial value for lambda', function() {
     expect(track.getLambda().length).toEqual(7015);
+  });
+
+  it('should have the correct initial value for LogL', function() {
     expect(track.getLogL().length).toEqual(7015);
+  });
+
+  it('should provide setters for all variables', function() {
+    expect(track.setSnrArray).toBeDefined();
+    expect(track.setIterationCount).toBeDefined();
+    expect(track.setNarray).toBeDefined();
+    expect(track.setMarray).toBeDefined();
+    expect(track.setSweetPoint).toBeDefined();
+    expect(track.setIsIncreasing).toBeDefined();
+    expect(track.setReversalCount).toBeDefined();
+    expect(track.setPhi).toBeDefined();
+    expect(track.setAlpha).toBeDefined();
+    expect(track.setBeta).toBeDefined();
+    expect(track.setLambda).toBeDefined();
+    expect(track.setLogL).toBeDefined();
   });
 
   it('should provide an Inverse Psychometric that sets the next snr in snrArray', function() {

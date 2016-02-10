@@ -5,7 +5,8 @@
  * @name sinpfApp.controller:TabsCtrl
  * @description
  * # TabsCtrl
- * Controller of the sinpfApp
+ * Controller of the sinpfApp.
+ * Can be thought of as the parent to input, graph, and instructions.
  */
 angular.module('sinpfApp').controller('TabsCtrl', function($scope) {
   var tabs = this;

@@ -6,6 +6,7 @@
  * @description
  * # graphing
  * Factory in the sinpfApp.
+ * Provides calculations for graph data.
  */
 angular.module('sinpfApp').factory('graphing', function(utility) {
 
@@ -29,7 +30,7 @@ angular.module('sinpfApp').factory('graphing', function(utility) {
     while (x <= maxX) {
       y = computeY(x,phi.alpha,phi.beta,phi.gamma,phi.lambda);
       points.xPoints.push(x);
-      yData.push(100*y);
+      yData.push(100*y); // 100*y in order to convert to percentage
       x += step;
     }
     
