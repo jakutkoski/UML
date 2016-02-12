@@ -66,7 +66,7 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
 
   $scope.terminate = function() {
     $window.alert('Experiment finished! Continue to the Graph tab.');
-    $scope.toggle("graphView");
+    $scope.toggle('graphView'); // toggle comes from the scope of TabsCtrl
   };
 
   $scope.flash = function(givenMessage, timeLength) {
