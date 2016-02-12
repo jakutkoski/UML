@@ -9,13 +9,11 @@
  * Can be thought of as the parent to input, graph, and instructions.
  */
 angular.module('sinpfApp').controller('TabsCtrl', function($scope) {
-  $scope.toggle = toggle;
-
   $scope.input        = { isVisible: true,  class: 'active'};
   $scope.graph        = { isVisible: false, class: ''};
   $scope.instructions = { isVisible: false, class: ''};
 
-  function toggle(givenView) {
+  $scope.toggle = function(givenView) {
     $scope.input = { isVisible: false, class: ''};
     $scope.graph = { isVisible: false, class: ''};
     $scope.instructions = { isVisible: false, class: ''};
@@ -34,6 +32,7 @@ angular.module('sinpfApp').controller('TabsCtrl', function($scope) {
       $scope.input.isVisible = true;
       $scope.input.class = 'active';
     }
-  }
+  };
+  
 });
 

@@ -1,9 +1,22 @@
 <div id="graphBorder" ng-controller="GraphCtrl">
 
-  <div id="graphComponent" class="no-pointer-events">
-    <canvas id="chartCanvas" class="chart chart-line" chart-series="series" chart-options="options" chart-legend="true"
-            chart-labels="xPoints" chart-data="yPoints">
-    </canvas>
+  <div id="graphArea">
+    <div class="row">
+      <div id="yAxis" class="col-xs-1"><p>Proportion Correct</p></div>
+      
+      <div class="col-xs-11">
+        <div id="chartComponent" class="no-pointer-events">
+          <canvas id="chartCanvas" class="chart chart-line" chart-series="series" chart-options="options" chart-legend="false"
+                  chart-labels="xPoints" chart-data="yPoints">
+          </canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-1"></div>
+      <div id="xAxis" class="col-xs-11"><p>Signal-to-Noise Ratio</p></div>
+    </div>
   </div>
 
   <div id="formulaView">
