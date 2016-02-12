@@ -126,8 +126,24 @@ body {
   margin-bottom: 30px;
 }
 
-#graphComponent {
+#graphArea {
   padding-top: 20px;
+}
+
+#xAxis {
+  text-align: center;
+}
+
+#yAxis {
+  position: relative;
+  transform: translateX(30%) translateY(250%) rotate(-90deg);
+}
+
+/* hide the yAxis if the screen is under 500px wide */
+@media screen and (max-width: 500px) {
+  #yAxis {
+    display: none;
+  }
 }
 
 #formulaView {
@@ -165,7 +181,7 @@ body {
   #inputBorder, #inputBorder * {
     visibility: visible;
   }
-  #graphComponent, #graphComponent * {
+  #graphArea, #graphArea * {
     visibility: visible;
   }
   #formulaView, #formulaView * {

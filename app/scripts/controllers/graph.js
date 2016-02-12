@@ -9,7 +9,7 @@
  * This handles UI logic for the Graph tab.
  */
 angular.module('sinpfApp').controller('GraphCtrl', function($scope, $window, graphing, track) {
-  $scope.series = ['Percent Correct']; // graph legend
+  $scope.series = ['Proportion Correct']; // graph legend
   $scope.xPoints = [0];
   $scope.yPoints = [[0]]; // array of arrays because there can be multiple plotted lines
   $scope.options = { // options that configure properties of the graph
