@@ -45,7 +45,6 @@ As a general overview of the scripts:
   - TabsCtrl handles tab switching
   - InputCtrl handles user interaction for the input panel
   - GraphCtrl handles user interaction and updating the graph on the graph panel
-  - InstructionsCtrl is static since that tab is just text
 - The `services/` that are injected into the controllers:
   - track.js defines the `track` service, which provides important variables to be tracked
   - utility.js defines the `utility` service, which provides useful utility functions used throughout the app

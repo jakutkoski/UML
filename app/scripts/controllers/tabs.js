@@ -6,7 +6,7 @@
  * @description
  * # TabsCtrl
  * Controller of the sinpfApp.
- * Can be thought of as the parent to input, graph, and instructions.
+ * Handles switching views between input, graph, and instructions.
  */
 angular.module('sinpfApp').controller('TabsCtrl', function($scope) {
   $scope.input        = { isVisible: true,  class: 'active'};
