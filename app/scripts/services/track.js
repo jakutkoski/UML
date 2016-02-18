@@ -10,7 +10,6 @@
  */
 angular.module('sinpfApp').factory('track', function(utility, UMLtable) {
 
-  // Variables to be tracked throughout the app (with their initial values assigned)
   var snrArray   = [9999],
   iterationCount = 0,
   nArray         = [],
