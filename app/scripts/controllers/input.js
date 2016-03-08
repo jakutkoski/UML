@@ -15,9 +15,10 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
   $scope.maskerLevel = 'OFF';
   $scope.flasher = { message: 'initial message', isVisible: false };
   
+  const ENTER_KEY_CODE = 13;
   $scope.keyPressed = function(event) {
     var keyCode = event.keyCode || event.which || event.charCode;
-    if (keyCode === 13) { // enter key
+    if (keyCode === ENTER_KEY_CODE) {
       $scope.runIteration();
     }
   };
@@ -66,6 +67,7 @@ angular.module('sinpfApp').controller('InputCtrl', function($scope, $window, $ti
 
   $scope.terminate = function() {
     $window.alert('Experiment finished! Continue to the Graph tab.');
+    $scope.toggle('graphView'); // toggle comes from TabsCtrl
   };
 
   $scope.flash = function(givenMessage, timeLength) {

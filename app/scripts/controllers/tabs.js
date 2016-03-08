@@ -6,36 +6,33 @@
  * @description
  * # TabsCtrl
  * Controller of the sinpfApp.
- * Can be thought of as the parent to input, graph, and instructions.
+ * Handles switching views between input, graph, and instructions.
  */
 angular.module('sinpfApp').controller('TabsCtrl', function($scope) {
-  var tabs = this;
+  $scope.input        = { isVisible: true,  class: 'active'};
+  $scope.graph        = { isVisible: false, class: ''};
+  $scope.instructions = { isVisible: false, class: ''};
 
-  tabs.input        = { isVisible: true,  class: 'active'};
-  tabs.graph        = { isVisible: false, class: ''};
-  tabs.instructions = { isVisible: false, class: ''};
-
-  function toggle(givenView) {
-    tabs.input = { isVisible: false, class: ''};
-    tabs.graph = { isVisible: false, class: ''};
-    tabs.instructions = { isVisible: false, class: ''};
+  $scope.toggle = function(givenView) {
+    $scope.input = { isVisible: false, class: ''};
+    $scope.graph = { isVisible: false, class: ''};
+    $scope.instructions = { isVisible: false, class: ''};
 
     if (givenView === 'inputView') {
-      tabs.input.isVisible = true;
-      tabs.input.class = 'active';
+      $scope.input.isVisible = true;
+      $scope.input.class = 'active';
     } else if (givenView === 'graphView') {
-      tabs.graph.isVisible = true;
-      tabs.graph.class = 'active';
+      $scope.graph.isVisible = true;
+      $scope.graph.class = 'active';
       $scope.$broadcast('updateGraphView');
     } else if (givenView === 'instructionsView') {
-      tabs.instructions.isVisible = true;
-      tabs.instructions.class = 'active';
+      $scope.instructions.isVisible = true;
+      $scope.instructions.class = 'active';
     } else {
-      tabs.input.isVisible = true;
-      tabs.input.class = 'active';
+      $scope.input.isVisible = true;
+      $scope.input.class = 'active';
     }
-  }
-
-  tabs.toggle = toggle;
-
+  };
+  
 });
+
